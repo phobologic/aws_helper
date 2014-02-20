@@ -11,7 +11,7 @@ def read(filename):
         return fd.read()
 
 setup(name='aws_helper',
-      version='0.2.1',
+      version='0.2.2',
       author='Michael Barrett',
       author_email='loki77@gmail.com',
       description='Helpers for dealing with AWS services.',
