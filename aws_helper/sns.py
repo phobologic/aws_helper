@@ -23,4 +23,9 @@ class SNSTopic(object):
 
     def subscribe_sqs_queue(self, *args, **kwargs):
         self._setup_topic()
-        return self._conn.subscribe_sqs_queue(self._topic_arn, *args, **kwargs)
+        response = self._conn.subscribe_sqs_queue(self._topic_arn,
+                                                  *args, **kwargs)
+        response = response['SubscribeResponse']
+        result = response['SubscribeResult']
+        return result['SubscriptionArn']
+
